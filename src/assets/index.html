@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多列表折叠和展开效果</title>
+<style>
+  /* 按钮样式 */
+  .toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+  }
+
+  .toggle-button:hover {
+    background-color: #2980b9;
+  }
+
+  /* 折叠内容初始状态 */
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-bottom: 15px;
+  }
+
+  /* 展开状态 */
+  .content.show {
+    max-height: 200px; /* 控制展开的高度 */
+  }
+</style>
+</head>
+<body>
+
+<h2>多列表折叠和展开效果</h2>
+
+<!-- 列表 1 -->
+<div>
+  <div class="toggle-button" onclick="toggleContent('content1')">展开/收起 列表 1</div>
+  <div class="content" id="content1">
+    <p>列表 1 的内容。</p>
+    <p>更多关于列表 1 的内容可以放在这里。</p>
+  </div>
+</div>
+
+<!-- 列表 2 -->
+<div>
+  <div class="toggle-button" onclick="toggleContent('content2')">展开/收起 列表 2</div>
+  <div class="content" id="content2">
+    <p>列表 2 的内容。</p>
+    <p>更多关于列表 2 的内容可以放在这里。</p>
+  </div>
+</div>
+
+<!-- 列表 3 -->
+<div>
+  <div class="toggle-button" onclick="toggleContent('content3')">展开/收起 列表 3</div>
+  <div class="content" id="content3">
+    <p>列表 3 的内容。</p>
+    <p>更多关于列表 3 的内容可以放在这里。</p>
+  </div>
+</div>
+
+<script>
+  function toggleContent(contentId) {
+    var content = document.getElementById(contentId);
+    content.classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
